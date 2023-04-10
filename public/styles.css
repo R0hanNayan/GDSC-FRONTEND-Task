@@ -1,18 +1,78 @@
+body{
+    background-image: url("bg-image.png");
+}
 .container{
+    margin-top: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    color: aliceblue;
     text-align: center;
-    background-color: bisque;
-    padding-top: 30px;
-    padding-bottom: 50px;
+    background-color: black;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 5px;
+}
+
+p{
+    font-size: 80px;
+    font-family: 'VT323', monospace;
+    margin-bottom: 50px;
+}
+
+.intro{
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    border-radius: 10px;
+    color: black;
+    background-color: rgb(17, 245, 17);
+    padding-bottom: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.parent{
+    margin-top: 50px;
 }
 
 .child{
+    font-size: 30px;
+    font-family: 'VT323', monospace;
+    text-align: center;
     display: inline-block;
+    width: 300px;
 }
 
 .artists{
-    background-color: red;
+    color: black;
+    background-color: rgb(17, 245, 17);
+    margin-right: 5px;
+    border-radius: 10px;
 }
 
 .songs{
-    background-color: yellow;
+    color: black;
+    margin-left: 5px;
+    background-color: rgb(17, 245, 17);
+    border-radius: 10px;
+}
+
+.btn{
+    font-family: 'VT323', monospace;
+    background-color: white;
+    font-size: 30px;
+    border: 10px;
+    border-radius: 10px;
+}
+.btn:hover{
+    font-size: 31px;
+}
+
+.country{
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    border: 10px;
+    background-color: white;
 }
