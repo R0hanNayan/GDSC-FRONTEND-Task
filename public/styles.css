@@ -4,3 +4,15 @@
     padding-top: 30px;
     padding-bottom: 50px;
 }
+
+.child{
+    display: inline-block;
+}
+
+.artists{
+    background-color: red;
+}
+
+.songs{
+    background-color: yellow;
+}
