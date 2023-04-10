@@ -3,9 +3,19 @@
     <div class="parent">
         <div class="child artists">
             <h2>Name</h2>
+            <ol>
+                <% name.forEach(name => { %>
+                    <li><%=name%></li>    
+                <% }); %>
+            </ol>
         </div>
         <div class="child songs">
             <h2>Songs</h2>
+            <ol>
+                <% song.forEach(song => { %>
+                    <li><%=song%></li>    
+                <% }); %>
+            </ol>
         </div>
     </div>
 

@@ -11,7 +11,9 @@ const topSongs = [];
 app.set('view engine', 'ejs');
 
 app.get("/", function(req, res){
-    res.render("footer");
+    res.render("footer", {name: topArtist, song: topSongs});
+    topArtist.splice(0,topArtist.length);
+    topSongs.splice(0,topSongs.length);
 });
 
 
@@ -23,9 +25,7 @@ app.post("/footer", async function(req, res){
     const data2 = await song.json();
     const data = await artits.json();
     for(let i=0; i<5; i++){
-        topArtist.push(data.topartists.artist[i].name)
-    }
-    for(let i=0; i<5; i++){
+        topArtist.push(data.topartists.artist[i].name);
         topSongs.push(data2.toptracks.track[i].name)
     }
     console.log(topSongs);
