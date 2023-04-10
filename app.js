@@ -5,6 +5,7 @@ const ejs = require("ejs");
 const appId = "6d39d4da1f8c05662f46ab74ac368eab"
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
+
 const topArtist=[];
 const topSongs = [];
 
