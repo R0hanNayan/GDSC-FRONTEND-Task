@@ -1,7 +1,8 @@
 body{
-    background-image: url("bg-image.png");
+    background-color: rgb(35, 35, 35);
 }
 .container{
+    background-image: url("bg-image.png");
     margin-top: 60px;
     margin-left: 20px;
     margin-right: 20px;
