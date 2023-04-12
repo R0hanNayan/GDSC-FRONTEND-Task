@@ -2,6 +2,12 @@ body{
     /* background-image: url("bg-image.png"); */
     background-color: black;
 }
+
+.flag{
+    margin-top: 70px;
+}
+
+
 .container{
     background-color: rgb(35, 35, 35);
     margin-top: 60px;
@@ -35,7 +41,7 @@ p{
 }
 
 .parent{
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .child{

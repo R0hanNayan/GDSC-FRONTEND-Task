@@ -2,19 +2,23 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const ejs = require("ejs");
-const appId = "6d39d4da1f8c05662f46ab74ac368eab"
+const appId = "6d39d4da1f8c05662f46ab74ac368eab";
+const appId2 = "1b824dfc1395760e3c534359f4cb76da";
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 const topArtist=[];
 const topSongs = [];
+const flag = [];
 
 app.set('view engine', 'ejs');
 
-app.get("/", function(req, res){
-    res.render("footer", {name: topArtist, song: topSongs});
+app.get("/", async function(req, res){
+    res.render("footer", {name: topArtist, song: topSongs, code:flag[0]});
     topArtist.splice(0,topArtist.length);
     topSongs.splice(0,topSongs.length);
+    flag.splice(0,flag.length);
 });
 
 
@@ -31,6 +35,14 @@ app.post("/footer", async function(req, res){
     }
     console.log(topSongs);
     console.log(topArtist);
+
+    //Flag Image API
+    const codeUrl = `https://restcountries.com/v3.1/name/${req.body.country}?fullText=true`;
+    const code = await fetch(codeUrl);
+    const data3 = await code.json();
+    const countryCode = data3[0].cca2;
+    flag.push(countryCode);
+    
     res.redirect("/");
 });
 
