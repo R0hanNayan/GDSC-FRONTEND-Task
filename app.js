@@ -23,27 +23,35 @@ app.get("/", async function(req, res){
 
 
 app.post("/footer", async function(req, res){
+    //last.fm API
     const songUrl = `http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${req.body.country}&api_key=${appId}&format=json`
     const Artisturl = `http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=${req.body.country}&api_key=${appId}&format=json`;
     const artits = await fetch(Artisturl);
     const song = await fetch(songUrl);
     const data2 = await song.json();
     const data = await artits.json();
-    for(let i=0; i<5; i++){
-        topArtist.push(data.topartists.artist[i].name);
-        topSongs.push(data2.toptracks.track[i].name)
-    }
-    console.log(topSongs);
-    console.log(topArtist);
 
-    //Flag Image API
-    const codeUrl = `https://restcountries.com/v3.1/name/${req.body.country}?fullText=true`;
-    const code = await fetch(codeUrl);
-    const data3 = await code.json();
-    const countryCode = data3[0].cca2;
-    flag.push(countryCode);
-    
-    res.redirect("/");
+    try{
+        for(let i=0; i<5; i++){
+            topArtist.push(data.topartists.artist[i].name);
+            topSongs.push(data2.toptracks.track[i].name)
+        }
+        console.log(topSongs);
+        console.log(topArtist);
+
+        //Flag Image API
+        const codeUrl = `https://restcountries.com/v3.1/name/${req.body.country}?fullText=true`;
+        const code = await fetch(codeUrl);
+        const data3 = await code.json();
+        const countryCode = data3[0].cca2;
+        flag.push(countryCode);
+        
+        res.redirect("/");
+    }
+    catch(err){
+        console.log("Country name Error");
+        res.redirect("/");
+    }
 });
 
 app.listen(3000, function(){
