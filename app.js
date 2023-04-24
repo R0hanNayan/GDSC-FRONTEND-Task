@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const ejs = require("ejs");
 const appId = "6d39d4da1f8c05662f46ab74ac368eab";
 const appId2 = "1b824dfc1395760e3c534359f4cb76da";
+const fetch = require("node-fetch");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
@@ -24,7 +25,7 @@ app.get("/", async function(req, res){
 
 app.post("/footer", async function(req, res){
     //last.fm API
-    const songUrl = `http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${req.body.country}&api_key=${appId}&format=json`
+    const songUrl = `http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${req.body.country}&api_key=${appId}&format=json`;
     const Artisturl = `http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=${req.body.country}&api_key=${appId}&format=json`;
     const artits = await fetch(Artisturl);
     const song = await fetch(songUrl);
