@@ -1,5 +1,4 @@
 body{
-    /* background-image: url("bg-image.png"); */
     background-color: black;
 }
 
@@ -10,10 +9,12 @@ body{
 
 .container{
     background-color: rgb(35, 35, 35);
-    margin-top: 60px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 50px;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    display: block;
+    margin-top: 10%;
+    margin-bottom: 10%;
     color: aliceblue;
     text-align: center;
     padding-top: 1px;
@@ -29,26 +30,28 @@ p{
 }
 
 .intro{
+    width: 90%;
+    margin: auto;
+    display: block;
     font-family: 'VT323', monospace;
     font-size: 20px;
     border-radius: 10px;
     color: black;
     background-color: rgb(17, 245, 17);
     padding-bottom: 10px;
-    margin-left: 100px;
-    margin-right: 100px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .parent{
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .child{
     font-size: 30px;
     font-family: 'VT323', monospace;
     text-align: center;
-    display: inline-block;
+    margin: auto;
+    display: block;
     width: 300px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
@@ -56,13 +59,11 @@ p{
 .artists{
     color: black;
     background-color: rgb(17, 245, 17);
-    margin-right: 5px;
     border-radius: 10px;
 }
 
 .songs{
     color: black;
-    margin-left: 5px;
     background-color: rgb(17, 245, 17);
     border-radius: 10px;
 }
@@ -70,19 +71,66 @@ p{
 .btn{
     font-family: 'VT323', monospace;
     background-color: white;
-    font-size: 30px;
+    font-size: 25px;
     border: 10px;
     border-radius: 10px;
 }
 .btn:hover{
-    font-size: 31px;
+    font-size: 26px;
 }
 
 .country{
     font-family: 'VT323', monospace;
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     border-radius: 10px;
     border: 10px;
     background-color: white;
+}
+
+@media only screen and (min-width: 1000px){       
+    .container{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    } 
+    .intro{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    
+    .parent{
+        margin-top: 10px;
+    }
+    
+    .child{
+        text-align: center;
+        margin: auto;
+        display: inline-block;
+        margin-bottom: 30px;
+    }
+    
+    .artists{
+        color: black;
+        background-color: rgb(17, 245, 17);
+        margin-right: 5px;
+        border-radius: 10px;
+    }
+    
+    .songs{
+        color: black;
+        margin-left: 5px;
+        background-color: rgb(17, 245, 17);
+        border-radius: 10px;
+    }
+    
+    .btn{
+        font-size: 30px;
+    }
+    .btn:hover{
+        font-size: 31px;
+    }
+    
+    .country{
+        font-size: 30px;
+    }
 }
